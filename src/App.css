@@ -1,5 +1,27 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: /*center;*/ stretch;
+  justify-content: /*center;*/ left;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#headerId {
+  text-align: center;
+  background-color: #282c34;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-logo {
@@ -13,8 +35,16 @@
   }
 }
 
+Button {
+  width: 200px;
+  height: 28px;
+  /*margin: 20px;*/
+  font-size: small;
+  border-radius: 30px;
+  background-color: #22D18B;
+}
+
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +52,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-bottom: 100px; /*extra*/
 }
 
 .App-link {
@@ -35,4 +66,76 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.LoginButton {
+  width: 250px;
+  height: 38px;
+  font-size: medium;
+  border-radius: 30px;
+  background-color: #22D18B;
+  margin-bottom: 15rem;
+}
+
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.light {
+  background-color: #fff;
+  color: #333;
+}
+
+nav {
+  height: 10vh;
+  background-color: darkgray;
+  margin: 10dp;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  margin: 1rem;
+  text-decoration: none;
+}
+
+#homeItem {
+  margin-right: 1rem;
+  text-decoration:none
+}
+
+#aboutItem {
+  margin-right: 1rem;
+  text-decoration:none
+}
+
+.commonParaStyle {
+  display: inline;
+  margin-right: 1rem;
+  font-size: small;
+}
+
+.commonSpanClass {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: goldenrod;
+}
+
+#companyIntro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;;
+  justify-content: center;
+  padding-top: 5%;
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+}
+
+.simpleParaClass {
+  font-size: large;
+  color: #22D18B;
 }

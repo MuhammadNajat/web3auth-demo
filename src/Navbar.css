@@ -1,0 +1,14 @@
+nav {
+    height: 10vh;
+    background-color: darkgray;
+    margin: 10dp;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: white;
+    margin: 1rem;
+    text-decoration: none;
+  }

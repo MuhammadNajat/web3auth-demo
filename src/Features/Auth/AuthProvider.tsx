@@ -3,7 +3,7 @@ import { ADAPTER_EVENTS, CHAIN_NAMESPACES, CONNECTED_EVENT_DATA, CustomChainConf
 import { Web3Auth } from '@web3auth/web3auth';
 import { LOGIN_MODAL_EVENTS } from "@web3auth/ui"
 
-const WEB3AUTH_CLIENT_ID="__" // get your clientId from https://developer.web3auth.io
+const WEB3AUTH_CLIENT_ID="BAH9d4Us5eIOX7eW6vhY8vXG-Wyn294OzNe8LB5Rzeo8y1P8EVwSwry4wLfIWldJgLspoK7fo7MZQO1HSCMOaL0" // get your clientId from https://developer.web3auth.io
 
 const solanaChainConfig: CustomChainConfig = {
   chainNamespace: CHAIN_NAMESPACES.SOLANA,
@@ -51,24 +51,24 @@ export const AuthProvider: React.FC = ({
     setUser(user)
   }, [])
 
-  const login = useCallback(() => {
-    web3auth.connect().then(data => {
+  const login = useCallback(async () => {
+    await web3auth.connect().then(data => {
       console.log(data)
     }).catch(err => {
       console.log(err)
     })
   }, [])
 
-  const logout = useCallback(() => {
-    web3auth.logout().then(() => {
+  const logout = useCallback(async () => {
+    await web3auth.logout().then(() => {
       // login on logout
     }).catch(err => {
       console.log('logout', err)
     })
   }, [])
 
-  const subscribeAuthEvents = useCallback((web3auth: Web3Auth) => {
-    web3auth.on(ADAPTER_EVENTS.CONNECTED, (data: CONNECTED_EVENT_DATA) => {
+  const subscribeAuthEvents = useCallback(async (web3auth: Web3Auth) => {
+    await web3auth.on(ADAPTER_EVENTS.CONNECTED, (data: CONNECTED_EVENT_DATA) => {
       console.log("Yeah!, you are successfully logged in", data);
       web3auth.getUserInfo().then((user) => {
         onSuccessfulLogin(data, user)
@@ -94,8 +94,8 @@ export const AuthProvider: React.FC = ({
     });
   }, [onSuccessfulLogin])
 
-  useEffect(() => {
-    subscribeAuthEvents(web3auth)
+  useEffect( () => {
+    subscribeAuthEvents(web3auth);
 
     web3auth.initModal()
       .catch(err => {

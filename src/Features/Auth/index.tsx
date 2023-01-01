@@ -8,7 +8,7 @@ export const Auth: React.FC = ({
   return (
     <AuthProvider>
       <AuthConsumer>
-        {(value: AuthProviderData) => value.provider ? <>{children}</> : <button onClick={value.login}>Login</button>}
+        {(value: AuthProviderData) => value.provider ? <>{children}</> : <button onClick={value.login} className="LoginButton">Login</button>}
       </AuthConsumer>
     </AuthProvider>
   )
